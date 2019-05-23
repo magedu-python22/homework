@@ -4,15 +4,16 @@
 
 ### 不要随意删除别人的代码！
 ### 
-目录结构如下                     
+                   
 ```
 默认目录不存在的，项目clone下来后，需要手动创建下:
 创建01文件夹(目录)
-在 01 文件夹里面新建文件夹(目录) :
-P22044-hangzhou-yangfeng #这是个文件夹(目录)
-在 P22044-hangzhou-yangfeng 里面创建xxx.py 
+在 01 文件夹里面新建文件夹(目录):
+    P22044-hangzhou-yangfeng #这是个文件夹(目录)
+    在 P22044-hangzhou-yangfeng 里面创建xxx.py 
 
-说明:P22044-hangzhou-yangfemg(是你在群里面的学号和名字)
+
+说明:P22044-hangzhou-yangfeng(是你在群里面的学号和名字)
 ```
 
 目录结构如下 
