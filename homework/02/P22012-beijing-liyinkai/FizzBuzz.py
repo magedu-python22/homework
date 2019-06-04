@@ -1,3 +1,5 @@
+# Author: Li Yinkai
+# Date: 2019.06.04
 
 '''
 功能描述：
@@ -24,13 +26,18 @@ fizzbuzz = list()
 
 
 # Algorithm2:
-for num in range(3,101):
-    if not num % 3:
-        fizz.append(num)
-        if not num % 5:
-            fizzbuzz.append(num)
-    if not num % 5:
-        buzz.append(num)
+# for num in range(3,101):
+#     if not num % 3:
+#         fizz.append(num)
+#         if not num % 5:
+#             fizzbuzz.append(num)
+#     if not num % 5:
+#         buzz.append(num)
+
+# Algorithm3:
+fizz = list(filter(lambda x: not x % 3, list(range(101))))
+buzz = list(filter(lambda y: not y % 5, list(range(101))))
+fizzbuzz = list(filter(lambda z: not z % 5, fizz))
 
 print("Fizz: ",*fizz)
 print("Buzz: ",*buzz)
