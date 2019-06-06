@@ -1,0 +1,30 @@
+﻿第4题  Fizz,Buzz
+lst=[i for i in range(101)]
+for i in range(101):
+    if i % 3 ==0:
+        lst[i]='Fizz'
+    if i % 5 ==0:
+         lst[i]='Buzz'
+    if i % 5 ==0 and i% 3 ==0:
+        lst[i]='Fizz,Buzz'
+        lst[0]=0
+print(lst)
+
+
+第三题  猜大小
+
+import random
+rand=random.randrange(100)
+print(rand)
+while True:
+    inputs=int(input(''))
+    if rand >= inputs:
+        if rand > inputs:
+            print("small")
+            continue
+        else:
+            print("bingo")
+            break
+    else:
+        print("big")
+        continue
