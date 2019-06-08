@@ -8,9 +8,9 @@ num = random.randint(1,100)
 Flag = True
 while Flag:
     try:
-        val = input('请输入一个两位数:')
+        val = input('请输入一个三位以内的数字:')
         while len(val) >= 3:
-            val = input('请输入一个两位数:')
+            val = input('请输入一个三位以内的数字:')
         val = int(val)
         if val > num:
             print("biger")
