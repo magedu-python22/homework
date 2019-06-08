@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 import random
-num = random.randint(1,100)
+num = random.randint(1,1000)
 
 
 Flag = True
