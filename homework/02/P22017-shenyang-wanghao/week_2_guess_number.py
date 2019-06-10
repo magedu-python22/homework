@@ -15,3 +15,4 @@ while True:
 		print("\nCongratulations! You are right!")
 		break
 	
+# 这个逻辑上也没有啥问题

@@ -8,3 +8,5 @@ for i in range(1,100):
         print('Buzz')   
     else:
         print(i)
+
+# 建议最好写成python的文件

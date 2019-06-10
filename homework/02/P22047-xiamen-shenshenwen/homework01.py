@@ -13,3 +13,5 @@ while not num == result:
     num = int(input('Please enter a number: ').strip().lstrip('0'))
 
 print(f"\n恭喜，猜中啦!!! 答案是：{result}")
+
+# 这样写也行

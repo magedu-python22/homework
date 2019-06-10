@@ -18,3 +18,6 @@ while(1):
     else:
         print('猜中了！')
         break;
+
+
+# break 后面多了分好，  inputNum=int(input("请继续输入>>> "))这句当道 if的上面试试

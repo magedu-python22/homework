@@ -8,3 +8,4 @@ for i in range(1,101):
     elif not i%15:
         i = "FizzBuzz"
     print(i,end=",")
+# 写的很好

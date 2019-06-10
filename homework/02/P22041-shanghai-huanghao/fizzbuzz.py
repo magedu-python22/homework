@@ -12,3 +12,5 @@ for i in range(0, 101):
 	else:
 		l[i] = 'Buzz'
 print(', '.join(l))
+
+# 写的真好

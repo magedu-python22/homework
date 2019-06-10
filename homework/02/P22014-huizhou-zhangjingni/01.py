@@ -18,3 +18,5 @@ while True:
     flag = '>' if n > answer else '<'
     print('n {} answer'.format(flag) )
 
+# 写的很好~
+

@@ -22,3 +22,4 @@ while True:
         print('Success!')
         break
 print('Answer number: ',count)
+# 写的很棒~

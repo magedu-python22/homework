@@ -21,3 +21,4 @@ for i in range(1000):
     else:
         print('答对了')
         break
+

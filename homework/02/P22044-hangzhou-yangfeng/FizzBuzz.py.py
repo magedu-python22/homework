@@ -18,3 +18,4 @@ for i in range(1,n+1):
         FizzBuzz.append(i)
 print(FizzBuzz)
 
+# 可以啊

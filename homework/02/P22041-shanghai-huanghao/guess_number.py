@@ -11,3 +11,5 @@ while True:
 	else:
 		print('Bingo')
 		break
+
+# 不用continue 试试

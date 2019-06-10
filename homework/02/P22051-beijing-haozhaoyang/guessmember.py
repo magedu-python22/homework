@@ -22,3 +22,4 @@ while Flag:
     except Exception as e:
         print(e)
 
+# 抓捕异常了，写的不错

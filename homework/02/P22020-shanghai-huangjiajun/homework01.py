@@ -19,3 +19,5 @@ while True:
 		print('Bigger!')
 	else:
 		print('Smaller!')
+
+# 逻辑上没有啥问题

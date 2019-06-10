@@ -6,3 +6,6 @@ for i in range(1,101):
         print('Buzz',end=char)
     else:
         print(i,end=char)
+
+
+# 写的不错~

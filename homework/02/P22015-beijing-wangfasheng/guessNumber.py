@@ -25,4 +25,5 @@ while True:
     else:
         print("猜的数字小了！")
 
+# 写的没有啥问题
 

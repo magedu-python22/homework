@@ -21,3 +21,5 @@ for i in range(0, 101):
         print('Buzz')
     else:
         print(i)
+
+# 可以再优化下？

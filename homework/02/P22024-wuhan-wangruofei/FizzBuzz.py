@@ -15,3 +15,6 @@ for i in range(1,101):
         print('Fizz')
     else:
         print('FizzBuzz')
+
+
+# 考虑下不换行？

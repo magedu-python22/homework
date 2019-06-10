@@ -7,3 +7,5 @@ for a in range(1,100):
     elif  a%3 == 0 and (a%5 != 0):
         a = "Fizz"
     print(a)
+
+# 少个100哦

@@ -1,10 +1,14 @@
+# encoding:utf-8
+
 num=123
 while True:
-    x = int(input('ÊäÈëÒ»¸öÊý×Ö£º'))
+    x = int(input('ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½'))
     if x > num:
-        print('´óÁË£¬ÇëÖØÐÂÊäÈë')
+        print('ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½')
     elif x < num:
-        print('Ð¡ÁË£¬ÇëÖØÐÂÊäÈë')
+        print('Ð¡ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½')
     else:
-        print('¹§Ï²Äã´ð¶ÔÁË')
+        print('ï¿½ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½')
         break
+
+# å»ºè®®æœ€å¥½å†™æˆpythonçš„æ–‡ä»¶

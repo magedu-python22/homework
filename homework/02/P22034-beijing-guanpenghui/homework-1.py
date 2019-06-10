@@ -14,3 +14,5 @@ while True:
     else:
         print('Congratuation,the number you input is right')
         break
+
+# 不用continue的

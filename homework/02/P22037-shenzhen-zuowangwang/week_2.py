@@ -45,4 +45,4 @@ while  flag:
     else:
         print(flag)
 
-
+# 用了for 和while 不错~

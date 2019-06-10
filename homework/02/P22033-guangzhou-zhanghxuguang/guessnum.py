@@ -14,3 +14,5 @@ while True:
             print("猜小了，重新输入",end='，')
     else:
         print("非法输入",end='，')
+
+# 不错，加了数字验证

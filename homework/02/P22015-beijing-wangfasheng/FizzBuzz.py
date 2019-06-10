@@ -19,3 +19,5 @@ for i in range(101):
         print("Fizz")
     else:
         print(i)
+
+# # 考虑下不换行？

@@ -29,3 +29,6 @@ while True:
             print('Too small, try again!')
         else:
             print('Too big, try again!')
+
+
+# 这个也是python2的

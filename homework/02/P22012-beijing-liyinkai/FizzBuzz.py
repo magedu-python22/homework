@@ -42,3 +42,4 @@ fizzbuzz = list(filter(lambda z: not z % 5, fizz))
 print("Fizz: ",*fizz)
 print("Buzz: ",*buzz)
 print("FizzBuzz: ",*fizzbuzz)
+# 虽然和结果有点不相符，但用到高阶函数，不错~

@@ -8,3 +8,4 @@ for i in range(1, 101):
         print('Bizz')
     else:
         print(i)
+# 能否不换行输出呢？

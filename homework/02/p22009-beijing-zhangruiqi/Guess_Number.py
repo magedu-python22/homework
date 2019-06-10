@@ -17,3 +17,5 @@ while flag:
 		print("小啦小啦，请输入一个较大的数字")
 	else:
 		print("大啦大啦，请输入一个较小的数字")
+
+# 这里也可以用break的

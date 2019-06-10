@@ -10,4 +10,6 @@ while True:
         n=int(input('Please guess a number again:'))
     else:
         print('You guess small.')
-        n=int(input('Please guess a number again:')) 
+        n=int(input('Please guess a number again:'))
+
+# 试试用下flag？  n=int(input('Please guess a number again:')) 这句放在 if 的上面试试？

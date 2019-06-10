@@ -16,3 +16,5 @@ for i in range(101):
         print(i)
     else:
         print(dest[flag])
+
+# 考虑下不换行？

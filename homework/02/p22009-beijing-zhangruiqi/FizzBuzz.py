@@ -18,3 +18,6 @@ for i in range(101):
 		print(i,end=' ')
 	if num % 10 == 0:
 		print()
+
+# 逻辑上看着是没有问题的, 试试有没有更好的写法？
+

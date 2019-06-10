@@ -20,3 +20,6 @@ if __name__ == '__main__':
     num_list = ['0']
     res = main(num, num_list)
     print(','.join(res))
+
+
+# 这个是python2的吧？

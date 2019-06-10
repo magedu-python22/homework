@@ -10,3 +10,5 @@ while a != i:
         break
     a = int(input('>>>'))
 print('guess right')
+
+# 感觉a != i 这个是不是可以换种方法呢？
