@@ -4,17 +4,16 @@ Created on Mon Jun  3 16:55:00 2019
 
 @author: YURiCA
 """
-print(0)
+l=[0]
 for i in range(1,101):
     if i%3 and i%5:
-        print(i)
+        l.append(i)
     elif i%3 and (not i%5):
-        print('Buzz')
-        
+        l.append('Buzz')
     elif (not i%3) and i%5:
-        print('Fizz')
+        l.append('Fizz')
     else:
-        print('FizzBuzz')
+        l.append('FizzBuzz')
 
-
+print(l)
 # 考虑下不换行？
