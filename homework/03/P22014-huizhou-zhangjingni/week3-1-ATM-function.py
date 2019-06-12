@@ -1,3 +1,4 @@
+@@ -0,0 +1,160 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 # Author:Miki
@@ -140,9 +141,12 @@ def pwdalter(uid):
 def infoalter(uid):
     print(uid, userdic[uid][1])
     tel = input('请输入手机号码：(输入空则退出)')
+    if tel == '' or tel.isspace():
+        return lst(uid)
     userdic[uid][1] = tel
     writeuserdic()
     print(uid, userdic[uid][1])
+    return lst(uid)
 
 
 def ATM():
@@ -157,4 +161,3 @@ def ATM():
 
 
 ATM()
-
