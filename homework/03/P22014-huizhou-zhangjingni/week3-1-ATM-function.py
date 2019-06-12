@@ -58,7 +58,6 @@ def signin():
 
 # 菜单界面
 def lst(uid):
-    command = dict(zip(range(1, 6), (useradm(uid), pwdalter(uid), infoalter(uid), ATM(), None)))
     print('''
     1.账户管理
     2.修改密码
@@ -67,10 +66,11 @@ def lst(uid):
     5.退出
     ''')
     choice2 = int(input('请输入对应的序列号以执行命令'))
-    if command[choice2]:
-        return command[choice2]
+    command = dict(zip(range(1, 6), (useradm, pwdalter, infoalter, ATM, writeuserdic)))
+    if choice2 >= 4:
+        return command[choice2]()
     else:
-        return None
+        return command[choice2](uid)
 
 
 # 查看账户余额
@@ -114,49 +114,42 @@ def useradm(uid):
         elif choice3 == 5:
             return lst(uid)
         else:
+            writeuserdic()
             break
-        writeuserdic()
 
 
 # 修改密码
 def pwdalter(uid):
     count = 1
-    while count <= 3:
-        pwd = input('请输入原密码：(输入空则退出)')
-        if pwd == '' or pwd.isspace():
-            return lst(uid)
-        elif pwd == userdic[uid][0]:
-            pwd = input('请输入新密码：')
-            userdic[uid][0] = pwd
-            writeuserdic()
-        else:
-            print('密码错误第{}次'.format(count))
-            count += 1
-    print('密码错误超过三次系统退出')
-    return None
+    pwd = input('请输入原密码：(输入空则退回上一级)')
+    if pwd == '' or pwd.isspace():
+        return lst(uid)
+    elif pwd == userdic[uid][0]:
+        pwd = input('请输入新密码：')
+        userdic[uid][0] = pwd
+        return lst(uid)
 
 
 # 修改信息
 def infoalter(uid):
     print(uid, userdic[uid][1])
-    tel = input('请输入手机号码：(输入空则退出)')
+    tel = input('请输入手机号码：(输入空则退回上一级)')
     if tel == '' or tel.isspace():
         return lst(uid)
     userdic[uid][1] = tel
-    writeuserdic()
     print(uid, userdic[uid][1])
     return lst(uid)
 
 
 def ATM():
-    command = dict(zip(range(1, 4), (signup(), signin(), None)))
     print('''
-    1.用户注册
-    2.用户登陆
+    1.用户登陆
+    2.用户注册
     3.退出
     ''')
     choice1 = int(input('请输入对应的序列号以执行命令'))
-    return command[choice1]
-
+    command = dict(zip(range(1, 4), (signin, signup, writeuserdic)))
+    return command[choice1]()
 
 ATM()
+

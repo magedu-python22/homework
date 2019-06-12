@@ -84,28 +84,23 @@ while True:
                                         json.dump(userdic, f)
                                     quit()
                         elif command1 == 2:  # 2.修改密码
-                            count = 1
-                            while count <= 3:
-                                pwd = input('请输入原密码：(输入空则退出)')
-                                if pwd == '' or pwd.isspace():
-                                    break
-                                elif pwd == userdic[uid][0]:
-                                    pwd = input('请输入新密码：')
-                                    userdic[uid][0] = pwd
-                                    with open(filename, 'w+') as f:
-                                        json.dump(userdic, f)
-                                else:
-                                    print('密码错误第{}次'.format(count))
-                                    count += 1
-                            print('密码错误超过三次系统退出')
-                            quit()
+                            pwd = input('请输入原密码：(输入空则退回上一级)')
+                            if pwd == '' or pwd.isspace():
+                                break
+                            elif pwd == userdic[uid][0]:
+                                pwd = input('请输入新密码：')
+                                userdic[uid][0] = pwd
+                                print('修改成功')
+                                continue
                         elif command1 == 3:  # 3.修改电话号码
                             print(uid, userdic[uid][1])
-                            tel = input('请输入手机号码：(输入空则退出)')
+                            tel = input('请输入手机号码：(输入空则退回上一级)')
+                            if tel == '' or tel.isspace():
+                                break
                             userdic[uid][1] = tel
-                            with open(filename, 'w+') as f:
-                                json.dump(userdic, f)
+                            print('修改成功')
                             print(uid, userdic[uid][1])
+                            continue
                         elif command1 == 4:  # 4.返回上一级
                             with open(filename, 'w+') as f:
                                 json.dump(userdic, f)
@@ -127,7 +122,7 @@ while True:
     # 用户注册
     elif command == 2:
         while True:
-            uid = input('请输入用户名：(输入空则退出)')
+            uid = input('请输入用户名：(输入空则退回上一级)')
             if uid == '' or uid.isspace():
                 break
             if userdic.get(uid, 0):
@@ -140,4 +135,6 @@ while True:
                 with open(filename, 'w+') as f:
                     json.dump(userdic, f)
     else:
+        with open(filename, 'w+') as f:
+            json.dump(userdic, f)
         break
