@@ -1,4 +1,3 @@
-@@ -0,0 +1,160 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 # Author:Miki
