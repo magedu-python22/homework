@@ -1,0 +1,1 @@
+{'zhangsan': {'password': '123456', 'phonenumber': 66666666, 'balance': 1000000}, 'lisi': {'password': '234567', 'phonenumber': 88888888, 'balance': 1800}}
