@@ -1,3 +1,4 @@
+import sys
 users = {'user1':['111111', 5000], 'user2':['123456', 10000]}
 
 def register(): #用户注册
@@ -50,7 +51,10 @@ def withdraw(username, amount): #取款
 		return True
 
 while True:
-	print('Enter 1 to register / Enter 2 to login')
+	print('''--WELCOME--
+1:Register
+2:Log In
+3.Exit''')
 	t1 = input('>>> ')
 	if t1 == '1':
 		register()
@@ -59,11 +63,12 @@ while True:
 		username = login()
 		while True:
 			if username != False:
-				print('1: Query Balance')
-				print('2: Transfer')
-				print('3: Desposit')
-				print('4: Withdraw')
-				print('5: Log Out')
+				print(f'''{username},Hello!
+1: Query Balance
+2: Transfer
+3: Desposit
+4: Withdraw
+5: Log Out''')
 				t2 = input('>>> ')
 				
 				if t2 == '1':
@@ -109,3 +114,5 @@ while True:
 
 				else:
 					print('Please enter a correct number!\n')
+	elif t1 == '3':
+		sys.exit()

@@ -1,4 +1,3 @@
-
 for number in range(0, 101, 1):
 	if int(number) % 15 == 0 and int(number) > 0:
 		number = 'FizzBuzz'
