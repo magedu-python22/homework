@@ -132,5 +132,7 @@ if __name__ == '__main__':
                     choose = input("输入有误，重新输入>>>").strip()
         elif login_choose == "2":
             register(users)
+        elif login_choose == "3":
+            exit("退出系统")
         else:
             print("输入有误")
