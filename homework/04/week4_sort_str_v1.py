@@ -22,6 +22,8 @@ for i in range(len(s)):
 	
 s = tmp_lower+tmp_upper+tmp_odd+tmp_even
 print(s)
+
+# The first version is missing, upload again.
 	
 	
 	
