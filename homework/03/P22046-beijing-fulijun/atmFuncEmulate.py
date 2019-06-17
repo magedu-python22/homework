@@ -156,6 +156,9 @@ def accountTransfer(users_info_file, logined_user_list):
                 user_data = getUsersInfo(users_info_file)
                 cur_user_balance = user_data[cur_logined_user][-1]
                 transed_user_balance = user_data[transfered_user][-1]
+                if transed_user_balance == 'evilUser':
+                    print('\nOperator not permited, Transfered user account {} has been locked !'.format(transfered_user))
+                    return
                 try:
                     transed_wealth = int(input('Enter the amount of money you want to transfer >>'))
                     if transed_wealth > cur_user_balance:
