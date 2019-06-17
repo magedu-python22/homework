@@ -26,7 +26,7 @@ for i in range(len(string)):
         up += 1
         odd += 1
         even += 1
-    elif string[i].isdigit() and int(string[i])&2:
+    elif string[i].isdigit() and int(string[i])&1:
         List.insert(odd,string[i])
         odd += 1
         even += 1
