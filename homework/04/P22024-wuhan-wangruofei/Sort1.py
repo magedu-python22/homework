@@ -14,24 +14,24 @@ up=0
 low=0
 odd=0
 even=0
-for i in range(len(string)):
-    if string[i].islower():
-        List.insert(low,string[i])
+for i in string:
+    if i.islower():
+        List.insert(low,i)
         low += 1
         up += 1
         odd += 1
         even += 1
-    elif string[i].isupper():
-        List.insert(up,string[i])
+    elif i.isupper():
+        List.insert(up,i)
         up += 1
         odd += 1
         even += 1
-    elif string[i].isdigit() and int(string[i])&1:
-        List.insert(odd,string[i])
+    elif i.isdigit() and int(i)&1:
+        List.insert(odd,i)
         odd += 1
         even += 1
     else:
-        List.insert(even, string[i])
+        List.insert(even, i)
         even += 1
 
 s=''.join(List)
