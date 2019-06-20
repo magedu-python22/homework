@@ -4,6 +4,10 @@ usernamedict = defaultdict(lambda: [])
 lst = ['用户登入', '用户注册', '退    出']
 lst2 = ['查询余额', '转账功能', '存    款', '取    款', '返    回', '退    出']
 def enter():# 登入
+    """
+    登入
+    :return:
+    """
     print('欢迎进入XX银行网上银行，请输入以下编码进行操作')
     print("----编码-------名称--------")
     for key, value in enumerate(lst):
@@ -16,6 +20,7 @@ def enter():# 登入
         return create()
     elif choice == "2":
         return print('3Q')
+
 def landing():# 用户登陆
     while True:
         username = str(input("请输入你的账户"))
@@ -149,3 +154,8 @@ def _landing(username):  #登录2
 
 enter()
 
+"""
+1. 一般情况下都是return出一个对象的，然后再调用，return这里注意下
+2.注释的问题 参考下enter
+3.数据库里面的账号不存在
+"""

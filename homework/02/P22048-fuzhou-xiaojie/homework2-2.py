@@ -20,3 +20,5 @@ for i in range(1, 101):
             print('Buzz', end='. ')
     else:
         print(i, end='. ')
+
+# # ok 没有问题

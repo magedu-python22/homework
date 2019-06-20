@@ -36,3 +36,7 @@ for i in string:
 
 s=''.join(List)
 print(s)
+
+"""
+元素里面也要排序下
+"""

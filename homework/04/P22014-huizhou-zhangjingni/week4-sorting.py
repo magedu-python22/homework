@@ -27,3 +27,6 @@ for c in s:
 dest = ''.join(sorted(lower) + sorted(upper) + sorted(odd) + sorted(even))
 print(dest)
 
+"""
+ok 写的很好~
+"""

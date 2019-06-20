@@ -19,3 +19,4 @@ while(1):
 
 
 # break 后面多了分好，  inputNum=int(input("请继续输入>>> "))这句当道 if的上面试试
+# ok 没有问题
