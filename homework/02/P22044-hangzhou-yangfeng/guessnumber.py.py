@@ -18,3 +18,5 @@ while True:
 
 
 # 不用 continue 试试
+
+可以，不用continue效果一样

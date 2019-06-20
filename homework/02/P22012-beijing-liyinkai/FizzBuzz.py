@@ -39,7 +39,7 @@ fizz = list(filter(lambda x: not x % 3, list(range(101))))
 buzz = list(filter(lambda y: not y % 5, list(range(101))))
 fizzbuzz = list(filter(lambda z: not z % 5, fizz))
 
-print("Fizz: ",*fizz)
-print("Buzz: ",*buzz)
-print("FizzBuzz: ",*fizzbuzz)
+print("Fizz: ", ','.join(map(str, fizz)))
+print("Buzz: ", ','.join(map(str, buzz)))
+print("FizzBuzz: ", ','.join(map(str, fizzbuzz)))
 # 虽然和结果有点不相符，但用到高阶函数，不错~
