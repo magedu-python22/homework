@@ -46,6 +46,18 @@ def Par_Odd_Even(List,low,high):
     List[low] = pivot
     return low
 
+def Par(List,low,high):
+    #排序
+    pivot = List[low]
+    while low < high:
+        while (low < high) and (pivot<List[high]):
+            high -= 1
+        List[low] = List[high]
+        while (low < high) and (pivot>List[low]):
+            low += 1
+        List[high] = List[low]
+    List[low] = pivot
+    return low
 
 def main():
     while True:
@@ -57,9 +69,13 @@ def main():
     List = ' '.join(string).split(' ')
     low = 0
     high = len(string) - 1
-    mid = Par_Letter_Number(List,low,high)
-    Par_Upper_Lower(List,low,mid)
-    Par_Odd_Even(List,mid+1,high)
+    letter = Par_Letter_Number(List,low,high)
+    lower = Par_Upper_Lower(List,low,letter)
+    odd = Par_Odd_Even(List,letter+1,high)
+    Par(List,low,lower)
+    Par(List,lower+1,letter)
+    Par(List,letter+1,odd)
+    Par(List,odd+1,high)
     string1 = ''.join(List)
     print(string1)
 
