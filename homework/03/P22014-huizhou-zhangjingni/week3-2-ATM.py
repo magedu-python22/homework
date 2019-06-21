@@ -25,11 +25,11 @@ while True:
     # 登陆验证
     if command == 1:
         count = 0
-        uid = input('请输入用户名：(输入空则退出)：')
+        uid = input('请输入用户名：(输入空则返回上一级)：')
         if uid == '' or uid.isspace():
-            break
-        while count <= 3:  # 密码错误超过三次系统退出
-            if userdic.get(uid, 0):
+            continue
+        if userdic.get(uid, 0):
+            while count < 3:  # 密码错误超过三次系统退出
                 pwd = input('请输入密码：')
                 if userdic[uid][0] == pwd:  # 密码正确进入 菜单界面
                     while True:
@@ -37,8 +37,7 @@ while True:
                         1.账户管理
                         2.修改密码
                         3.修改电话号码
-                        4.返回上一级
-                        5.退出
+                        4.退出
                         ''')
                         command1 = int(input('请输入序列号执行对应命令：'))
                         if command1 == 1: # 1.账户管理
@@ -52,39 +51,36 @@ while True:
                                 6.退出
                                 ''')
                                 command2 = int(input('请输入序列号执行对应命令：'))
-                                userm = userdic[uid][2]
                                 if command2 == 1:  # 1.查看当前余额
-                                    print(userm)
+                                    print(userdic[uid][2])
                                 elif command2 == 2:  # 2.转账
-                                    print('当前余额:', userm)
+                                    print('当前余额:', userdic[uid][2])
                                     uid1 = input('请输入其他账户用户名')
                                     m = int(input('请输入转账金额'))
                                     if userdic.get(uid1, 0):
-                                        userm = userm - m
+                                        userdic[uid][2] = userdic[uid][2] - m
                                         userdic[uid1][2] = userdic[uid1][2] + m
-                                        print('当前余额:', userm)
+                                        print('当前余额:', userdic[uid][2])
                                     else:
                                         print('该用户不存在')
                                 elif command2 == 3:  # 3.存款
-                                    print('当前余额:', userm)
+                                    print('当前余额:', userdic[uid][2])
                                     m = int(input('请输入存款金额'))
-                                    userm = userm + m
-                                    print('当前余额:', userm)
+                                    userdic[uid][2] = userdic[uid][2] + m
+                                    print('当前余额:', userdic[uid][2])
                                 elif command2 == 4:  # 4.取款
-                                    print('当前余额:', userm)
+                                    print('当前余额:', userdic[uid][2])
                                     m = int(input('请输入取款金额'))
-                                    userm = userm - m
-                                    print('当前余额:', userm)
+                                    userdic[uid][2] = userdic[uid][2] - m
+                                    print('当前余额:', userdic[uid][2])
                                 elif command2 == 5:  # 5.返回上一级
-                                    with open(filename, 'w+') as f:
-                                        json.dump(userdic, f)
                                     break
                                 else: # 6.退出
                                     with open(filename, 'w+') as f:
                                         json.dump(userdic, f)
-                                    quit()
+                                    exit()
                         elif command1 == 2:  # 2.修改密码
-                            pwd = input('请输入原密码：(输入空则退回上一级)')
+                            pwd = input('请输入原密码：(输入空则返回上一级)')
                             if pwd == '' or pwd.isspace():
                                 break
                             elif pwd == userdic[uid][0]:
@@ -94,35 +90,33 @@ while True:
                                 continue
                         elif command1 == 3:  # 3.修改电话号码
                             print(uid, userdic[uid][1])
-                            tel = input('请输入手机号码：(输入空则退回上一级)')
+                            tel = input('请输入手机号码：(输入空则返回上一级)')
                             if tel == '' or tel.isspace():
                                 break
                             userdic[uid][1] = tel
                             print('修改成功')
                             print(uid, userdic[uid][1])
                             continue
-                        elif command1 == 4:  # 4.返回上一级
+                        else: # 4.退出
                             with open(filename, 'w+') as f:
                                 json.dump(userdic, f)
-                            break
-                        else: # 5.退出
-                            with open(filename, 'w+') as f:
-                                json.dump(userdic, f)
-                            quit()
+                            exit()
                 else:
                     count += 1
                     print('密码错误第{}次'.format(count))
+                    continue
             else:
-                print('该用户不存在')
-            break
+                print('密码错误超过三次系统退出')
+                exit()
         else:
-            print('密码错误超过三次系统退出')
-            quit()
+            print('该用户不存在')
+            break
+
 
     # 用户注册
     elif command == 2:
         while True:
-            uid = input('请输入用户名：(输入空则退回上一级)')
+            uid = input('请输入用户名：(输入空则返回上一级)')
             if uid == '' or uid.isspace():
                 break
             if userdic.get(uid, 0):
@@ -144,4 +138,10 @@ while True:
 1 注册用户名 会提示 <class 'dict'>
 2 存取 存款 完毕后，一旦退出要写入到json文件里面，改下哈，一般退出的时候，不需要再次验证密码
 3 注册用户成功后，登录出现问题 ： {'www': ['123', 5000, '13522866559'], 'wfs': ['123', 5000, '13522866559']}{'www': ['123', 5000, '13522866559'], 'wfs': ['123', 5000, '13522866559'], 'vv': ['123', 5000, '123131']}
+"""
+
+"""
+1 重复试验没有出现<class 'dict'>
+2 已修改
+3 字典应该只会出现一个，形如{'www': ['123', 5000, '13522866559'], 'wfs': ['123', 5000, '13522866559']}
 """
