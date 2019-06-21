@@ -19,8 +19,15 @@ def Par_Letter_Number(List,low,high):
     return low
 
 
-#大写字母和小写字母拆分
+
 def Par_Upper_Lower(List,low,high):
+    """
+    大写字母和小写字母拆分
+    :param List:
+    :param low:
+    :param high:
+    :return:
+    """
     pivot = List[low]
     while low < high:
         while (low < high) and (List[high].isupper()):
@@ -33,8 +40,15 @@ def Par_Upper_Lower(List,low,high):
     return low
 
 
-#奇数和偶数拆分
+
 def Par_Odd_Even(List,low,high):
+    """
+    奇数和偶数拆分
+    :param List:
+    :param low:
+    :param high:
+    :return:
+    """
     pivot = List[low]
     while low < high:
         while (low < high) and (not int(List[high])&1):
@@ -47,7 +61,13 @@ def Par_Odd_Even(List,low,high):
     return low
 
 def Par(List,low,high):
-    #排序
+    """
+    排序
+    :param List:
+    :param low:
+    :param high:
+    :return:
+    """
     pivot = List[low]
     while low < high:
         while (low < high) and (pivot<List[high]):
@@ -84,5 +104,7 @@ if __name__ == '__main__':
     main()
 
     """
-    元素里面也要排序下
+    1 元素里面也要排序下
+    2 再看下这个代码哈
+    3 注释参考下 Par_Odd_Even 里面的
     """
