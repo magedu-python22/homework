@@ -24,7 +24,7 @@ islower() 是否都是小写
 isspace() 是否只包含空白字符
 
 """
-s = "9S8orFt5ainNg1234"
+s = "9SorFt5ainNg12980637"
 
 upper_list = []
 lower_list = []
@@ -43,7 +43,9 @@ for i in s:
         else:
             odd_num.append(i)
 
+lower_list.sort()
 for x in (upper_list, odd_num, even_num):
+    x.sort()
     lower_list.extend(x)
 print("".join(lower_list))
 
