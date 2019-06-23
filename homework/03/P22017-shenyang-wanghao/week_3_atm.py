@@ -100,5 +100,9 @@ with open(filename, 'w') as file_object:
 	file_object.write(str(customers))
 
 					
-					
+"""
+1. 新创建用户的时候，登录有些问题哦
+2. 没有提供修改密码的功能
+3. 逻辑上没有啥太大的问题
+"""
 			

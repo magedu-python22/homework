@@ -89,6 +89,10 @@ def reduce_action():
 
 ###转账
 def transfer_action():
+    """
+    转账
+    :return:
+    """
     Dst_usernameflag = False
     while not Dst_usernameflag:
         read_atm_userinfo()
@@ -166,3 +170,10 @@ while True:
         break
     else:
         print('输入有误，请稍后重试！')
+
+"""
+1.注释参考下 transfer_action 这个里面的写法
+2.170行的break的是做什么用的？
+3.用户文件忘记上传了吧
+4.逻辑上没有太大的问题 
+"""

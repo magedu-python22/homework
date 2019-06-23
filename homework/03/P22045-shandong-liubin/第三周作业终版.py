@@ -1,12 +1,16 @@
 import json
-with open("K:/ATM","r") as f:
+with open("ATM","r") as f:
     r=json.load(f)
 from collections import defaultdict
 usernamedict = defaultdict(lambda: [])
 usernamedict.update(r)
 lst = ['用户登入', '用户注册', '退    出']
 lst2 = ['查询余额', '转账功能', '存    款', '取    款', '返    回', '退    出']
-def enter():# 登入
+def enter():
+    """
+    登入
+    :return:
+    """
     print('欢迎进入XX银行网上银行，请输入以下编码进行操作')
     print("----编码-------名称--------")
     for key, value in enumerate(lst):
@@ -141,7 +145,13 @@ def _landing(username):  #登录2
     elif choice == "5":
         return exit()
 def exit():
-    with open("K:/ATM","w") as f:
+    with open("ATM","w") as f:
         json.dump(usernamedict,f)
         return print("谢谢使用，再见")
 enter()
+
+"""
+1. 一般情况下都是return出一个对象的，然后再调用，return这里注意下
+2.注释的问题 参考下enter
+3 逻辑上很ok
+"""

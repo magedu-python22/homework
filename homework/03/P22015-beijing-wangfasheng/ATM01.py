@@ -125,6 +125,7 @@ def menu():
 
 if choice == "1":
     login()
+
 elif choice == "2":
     register()
 elif choice == "3":
@@ -135,3 +136,4 @@ else:
 
 
 
+# 存取 存款 完毕后，一旦退出要写入到文件里面，改下哈,少个更改密码的功能哈
