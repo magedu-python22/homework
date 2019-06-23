@@ -45,7 +45,7 @@ for i in s:
 
 for x in (upper_list, odd_num, even_num):
     lower_list.extend(x)
-print(lower_list)
+print("".join(lower_list))
 
 
 
