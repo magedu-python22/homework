@@ -234,4 +234,9 @@ if __name__ == '__main__':
                 break
             else:
                 print('Operation is not permited !')
-                
+
+"""
+1.逻辑上没有啥问题
+2.代码还可以进行优化
+3.程序里面缺失数据库文件
+"""

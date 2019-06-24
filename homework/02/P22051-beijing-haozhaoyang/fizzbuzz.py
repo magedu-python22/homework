@@ -15,3 +15,4 @@ for i in range(0,101):
        print(i, end=' ')
 
 # 不用换行输出试试？
+# ok 没有问题

@@ -26,3 +26,7 @@ for i in s:
 sorting = upstr + lowstr + odd + even
 for j in sorting:
     print(j, end='')
+
+"""
+有点小问题，再改下哈
+"""

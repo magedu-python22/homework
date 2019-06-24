@@ -19,8 +19,15 @@ def Par_Letter_Number(List,low,high):
     return low
 
 
-#大写字母和小写字母拆分
+
 def Par_Upper_Lower(List,low,high):
+    """
+    大写字母和小写字母拆分
+    :param List:
+    :param low:
+    :param high:
+    :return:
+    """
     pivot = List[low]
     while low < high:
         while (low < high) and (List[high].isupper()):
@@ -33,8 +40,15 @@ def Par_Upper_Lower(List,low,high):
     return low
 
 
-#奇数和偶数拆分
+
 def Par_Odd_Even(List,low,high):
+    """
+    奇数和偶数拆分
+    :param List:
+    :param low:
+    :param high:
+    :return:
+    """
     pivot = List[low]
     while low < high:
         while (low < high) and (not int(List[high])&1):
@@ -46,6 +60,24 @@ def Par_Odd_Even(List,low,high):
     List[low] = pivot
     return low
 
+def Par(List,low,high):
+    """
+    排序
+    :param List:
+    :param low:
+    :param high:
+    :return:
+    """
+    pivot = List[low]
+    while low < high:
+        while (low < high) and (pivot<List[high]):
+            high -= 1
+        List[low] = List[high]
+        while (low < high) and (pivot>List[low]):
+            low += 1
+        List[high] = List[low]
+    List[low] = pivot
+    return low
 
 def main():
     while True:
@@ -57,12 +89,22 @@ def main():
     List = ' '.join(string).split(' ')
     low = 0
     high = len(string) - 1
-    mid = Par_Letter_Number(List,low,high)
-    Par_Upper_Lower(List,low,mid)
-    Par_Odd_Even(List,mid+1,high)
+    letter = Par_Letter_Number(List,low,high)
+    lower = Par_Upper_Lower(List,low,letter)
+    odd = Par_Odd_Even(List,letter+1,high)
+    Par(List,low,lower)
+    Par(List,lower+1,letter)
+    Par(List,letter+1,odd)
+    Par(List,odd+1,high)
     string1 = ''.join(List)
     print(string1)
 
 
 if __name__ == '__main__':
     main()
+
+    """
+    1 元素里面也要排序下
+    2 再看下这个代码哈
+    3 注释参考下 Par_Odd_Even 里面的
+    """

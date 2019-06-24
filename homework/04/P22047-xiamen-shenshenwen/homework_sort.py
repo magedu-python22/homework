@@ -28,3 +28,7 @@ for i in s:
 lower.split().sort()
 upper.split().sort()
 print(f'{lower}{upper}{even}{odd}')
+
+"""
+元素里面也要排序下
+"""

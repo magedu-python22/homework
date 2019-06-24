@@ -145,3 +145,11 @@ while True:
                     print('返回主菜单')
                     break
 
+"""
+1. 运行 应该是主菜单吧
+2. d.update({'zhangsan':{'passwd':123, 'balance':100, 'phone':18012345678}})
+            d.update({'lisi':{'passwd':456, 'balance':200, 'phone':18012345678}})
+            d.update({'wangmazi':{'passwd':789, 'balance':300, 'phone':18012345678}})
+这些应该在运行之前就初始化好的吧？
+3. 默认情况下：程序在运行期间，数据是保存在内存中的，退出的时候才会写入到文件里面
+"""

@@ -26,3 +26,7 @@ oddlist.sort()
 evenlist.sort()
 ret = lowerlist + upperlist + oddlist + evenlist
 print("".join(ret))
+
+"""
+元素里面也要排序下
+"""

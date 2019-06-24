@@ -5,7 +5,7 @@ s = "Sorting1234"
 tmp_lower = ''
 tmp_upper = ''
 tmp_odd = ''
-tmp_even = ''
+tmp_odd = ''
 for i in range(len(s)):
 	if s[i].islower():
 		tmp_lower = tmp_lower + s[i]
@@ -23,6 +23,9 @@ for i in range(len(s)):
 s = tmp_lower+tmp_upper+tmp_odd+tmp_even
 print(s)
 
+"""
+tmp_lower tmp_upper tmp_odd tmp_odd 里面也要排序下
+"""
 
 	
 	

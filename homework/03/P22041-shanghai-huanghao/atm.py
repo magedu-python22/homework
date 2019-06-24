@@ -1,7 +1,11 @@
 import sys
 users = {'user1':['111111', 5000], 'user2':['123456', 10000]}
 
-def register(): #用户注册
+def register():
+	"""
+	用户注册
+	:return:
+	"""
 	username = input('Please enter a user name.\n')
 	while username in users:
 		username = input('User name already exists!\n')
@@ -116,3 +120,9 @@ while True:
 					print('Please enter a correct number!\n')
 	elif t1 == '3':
 		sys.exit()
+
+
+#
+# 1.Withdraw应该是取款的意思吧？
+# 2.注释参考下 register
+# 3.转账交易注册没有啥问题
