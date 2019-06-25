@@ -1,4 +1,4 @@
-s = 'Sorting1234'
+s = 'Sorting123456879AFLdfkgs'
 pre = [ord(_) for _ in s]
 length = len(pre)
 
@@ -23,3 +23,7 @@ for m in range(state, length):
 
 cur = [chr(i) for i in pre]
 print(cur)
+"""
+有些小问题，再调整下
+Sorting123456879AFLdfkgs 试试用这个来验证下
+"""

@@ -28,4 +28,7 @@ print(c,bigc,ns,nd)
 
 newlist = [*c,*bigc,*ns,*nd]
 print(newlist)
-
+"""
+写的很好，不过有些问题哦
+试试 Sorting123456879AFLdfkgs 这个排序
+"""

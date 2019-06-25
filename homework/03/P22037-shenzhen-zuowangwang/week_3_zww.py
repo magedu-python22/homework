@@ -18,7 +18,11 @@ def write(info_dict):
     with open('./week_3_atm.txt', "w") as f:
         f.write(str(info_dict))
 
-def register():#用户可以输入用户名和密码创建自己的账号，并输入电话号码等信息，如果用户名存在则让用户重新输入用户名。注册后免费赠送5000元余额。
+def register():
+    """
+    用户可以输入用户名和密码创建自己的账号，并输入电话号码等信息，如果用户名存在则让用户重新输入用户名。注册后免费赠送5000元余额。
+    :return:
+    """
     info_dict = read()
     count_register_error = 3  # 注册错误次数限制
     while count_register_error:
@@ -111,3 +115,8 @@ def system ():
 if __name__ == '__main__':
     system()
 
+    """
+    1 逻辑上大体 没有什么问题
+    2 注释参考 register 这个里面的
+    3 再测试下转账功能哈：转账应该需要输入账号或者用户名才行
+    """
