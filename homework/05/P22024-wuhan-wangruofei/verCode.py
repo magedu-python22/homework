@@ -40,7 +40,7 @@ def VerCode(num):
     color = []
     List = []
     for i in range(num):
-        while 1: #防止颜色
+        while 1: #防止颜色重复
             tmp = GetColor()
             if tmp in color:
                 continue
