@@ -37,18 +37,19 @@ def VerCode(num):
     :param num:
     :return: 一个num位验证码
     """
-    color = []
-    List1 = []
-    List2 = []
+    color = [0 for i in range(num)]
+    List2 = [0 for i in range(num)]
     for i in range(num):
         while 1: #防止颜色重复
-            List1 = [random.choice(GetLetter()),GetColor()]
+            List1 = [0 for i in range(2)]
+            List1[0] = random.choice(GetLetter())
+            List1[1] = GetColor()
             if List1 in color:
                 continue
             else:
-                color.append(List1)
+                color[i] = List1
                 break
-        List2.append(List1)
+        List2[i] = List1
     return List2
 
 def main():
