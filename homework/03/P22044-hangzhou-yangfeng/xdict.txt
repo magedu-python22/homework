@@ -1,0 +1,1 @@
+{'zhangsan': {'passwd': 123, 'balance': 100, 'phone': 18012345678}, 'lisi': {'passwd': 456, 'balance': 200, 'phone': 18012345678}, 'wangmazi': {'passwd': 789, 'balance': 300, 'phone': 18012345678}, 'zhangxiaofan': <_io.TextIOWrapper name='/home/python/projects/web/xdict.txt' mode='r+' encoding='utf-8'>}

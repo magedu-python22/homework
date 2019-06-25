@@ -182,7 +182,9 @@ def withdraw(List):
         fp.close()
         print("取款成功")
 def main():
-    # 菜单界面显示
+    """
+    菜单界面显示
+    """
     print("中国银行自主存取系统".center(60, '='))
     print("登录/注册".center(60,' '))
     List_1=[]
@@ -221,3 +223,9 @@ def main():
             break
 if __name__=='__main__':
     main()
+
+"""
+1.逻辑没有什么问题
+2.写的很不错
+3.注释的话 可以写到函数里面,类似main里面的
+"""

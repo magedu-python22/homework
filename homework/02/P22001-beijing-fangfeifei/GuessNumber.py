@@ -23,3 +23,4 @@ while True:
         else:
             print('欢迎下次再来玩哦。。。')
             break
+# 逻辑上很ok 就是这个提示可以稍微改变下哈

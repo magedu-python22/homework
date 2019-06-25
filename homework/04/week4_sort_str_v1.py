@@ -24,6 +24,8 @@ s = tmp_lower+tmp_upper+tmp_odd+tmp_even
 print(s)
 
 # The first version is missing, upload again.
-	
-	
-	
+
+"""
+1 元素里面也要排序下
+2 麻烦建个自己的目录哈
+"""

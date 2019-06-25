@@ -22,3 +22,4 @@ for i in range(1000):
         print('答对了')
         break
 
+# 理论上说可以无限次的猜测

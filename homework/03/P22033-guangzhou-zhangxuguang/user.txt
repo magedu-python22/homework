@@ -1,0 +1,1 @@
+{'guang': {'password': '123', 'phone': '', 'balance': 5000}, 'xuguang': {'password': '123', 'phone': '123', 'balance': 4923}, 'xuguang2': {'password': '123', 'phone': '123', 'balance': 5120}}
