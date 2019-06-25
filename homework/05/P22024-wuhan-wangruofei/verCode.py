@@ -22,7 +22,7 @@ def GetLetter():
     获取一个由大写字母和数字组成的字符串
     :return: 字符串
     """
-    return string.ascii_uppercase + string.digits
+    return string.ascii_letters + string.digits
 
 def GetColor():
     """
@@ -37,20 +37,19 @@ def VerCode(num):
     :param num:
     :return: 一个num位验证码
     """
-    color = [0 for i in range(num)]
-    List2 = [0 for i in range(num)]
+    color = []
+    List = []
     for i in range(num):
-        while 1: #防止颜色重复
-            List1 = [0 for i in range(2)]
-            List1[0] = random.choice(GetLetter())
-            List1[1] = GetColor()
-            if List1 in color:
+        while 1: #防止颜色
+            tmp = GetColor()
+            if tmp in color:
                 continue
             else:
-                color[i] = List1
+                color.append(tmp)
+                List1 = [random.choice(GetLetter()), tmp]
                 break
-        List2[i] = List1
-    return List2
+        List.append(List1)
+    return List
 
 def main():
     """
