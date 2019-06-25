@@ -7,7 +7,7 @@ s = "Sorting1234"
 3 所有的奇数在偶数前面
 
 """
-s = "awFgWFWSAF12434861"
+s = "Sorting123456879AFLdfkgs"
 uper = ""
 lower = ""
 odd = ""
@@ -36,3 +36,6 @@ evenlst.sort()
 even = "".join(evenlst)
 #所有的小写字母在大写字母前面
 print(lower+uper+even+odd)
+"""
+没啥问题
+"""

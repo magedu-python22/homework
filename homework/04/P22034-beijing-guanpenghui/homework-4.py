@@ -16,3 +16,6 @@ for x in s:
     else:
         seven.append(x)
 print(slower+supper+sodd+seven)
+"""
+有些小问题：Sorting123456879AFLdfkgs 试试这个排序
+"""

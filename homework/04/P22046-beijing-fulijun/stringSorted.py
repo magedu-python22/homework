@@ -61,3 +61,6 @@ def main(aString):
 if __name__ == '__main__':
     s = "Sorting1234"
     print(main(s))
+    """
+    写的很好～
+    """
