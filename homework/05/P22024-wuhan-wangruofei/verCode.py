@@ -19,7 +19,7 @@ import string
 
 def GetLetter():
     """
-    获取一个由大写字母和数字组成的字符串
+    获取一个由字母和数字组成的字符串
     :return: 字符串
     """
     return string.ascii_letters + string.digits
