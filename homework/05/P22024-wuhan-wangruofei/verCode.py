@@ -41,7 +41,7 @@ def VerCode(num):
     List1 = []
     List2 = []
     for i in range(num):
-        while 1: #防止颜色
+        while 1: #防止颜色重复
             List1 = [random.choice(GetLetter()),GetColor()]
             if List1 in color:
                 continue
