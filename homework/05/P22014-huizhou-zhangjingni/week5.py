@@ -18,23 +18,38 @@ F (182, 136, 237)
 """
 import random
 import string
+from PIL import Image, ImageDraw, ImageFont
 
 
-def vcode():
-    return random.choice(string.ascii_uppercase + string.digits)
+# 生成随机字符 --> string
+def vcode(stringset=(string.ascii_uppercase + string.ascii_lowercase + string.digits)):
+    return random.choice(stringset)
 
 
+# 生成颜色 --> tuple
 def color():
-    return (random.randint(0,255) for _ in range(3))
+    return tuple(random.randint(0,255) for _ in range(3))
 
 
-def vcode_generater():
-    return ([vcode(),tuple(color())] for _ in range(6))
+# 验证码迭代器 --> generator
+def vcode_generator(n=6):
+    return ((vcode(),color()) for _ in range(n))
 
 
-for code in vcode_generater():
-    print(code)
+def create_image(n=1):
+    image1 = Image.new('RGB', (190, 30*n), )
+    draw1 = ImageDraw.Draw(image1)
+    font = ImageFont.truetype(r'C:\Windows\Fonts\arial.ttf', size=26)  # 根据不同操作系统要修改
+    for i in range(n):
+        vcode = vcode_generator()
+        for j, c in enumerate(vcode):
+            draw1.text((20 + j * 30, 30*i), c[0], c[1], font=font)
+    image1.show()
+    image1.save('code_image.jpg', 'jpeg')
 
-print(list(vcode_generater()))
+
+create_image(100)
+
+
 
 
