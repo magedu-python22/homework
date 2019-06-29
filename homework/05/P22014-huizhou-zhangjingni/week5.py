@@ -18,11 +18,12 @@ F (182, 136, 237)
 """
 import random
 import string
+import platform
 from PIL import Image, ImageDraw, ImageFont
 
 
 # 生成随机字符 --> string
-def code(stringset=(string.ascii_uppercase + string.ascii_lowercase + string.digits)):
+def vcode(stringset=(string.ascii_uppercase + string.ascii_lowercase + string.digits)):
     return random.choice(stringset)
 
 
@@ -31,25 +32,26 @@ def color():
     return tuple(random.randint(0,255) for _ in range(3))
 
 
-# 生成验证码 --> list
-def create_vcode(n=6):
-    return list((code(),color()) for _ in range(n))
-
-
-def create_image(n=1):
-    image1 = Image.new('RGB', (200, 30*n), )
+def create_image(n=1,code=6):
+    width = 30*code + 20
+    height = 30*n
+    image1 = Image.new('RGB', (width, height), )
     draw1 = ImageDraw.Draw(image1)
-    font = ImageFont.truetype(r'C:\Windows\Fonts\arial.ttf', size=26)  # 根据不同操作系统要修改
+    # 不同操作系统字体路径不同
+    os = platform.system()
+    if os == 'Windows':
+        font = ImageFont.truetype(r'C:\Windows\Fonts\arial.ttf', size=26)
+    elif os == 'Linux':
+        font = ImageFont.truetype('/usr/share/fonts/arial.ttf', size=26)
+    else:
+        font = ImageFont.truetype('/Library/Fonts/Arial.ttf', size=26)
     for i in range(n):
-        vcode = create_vcode()
-        for j, c in enumerate(vcode):
-            draw1.text((20 + j * 30, 30*i), c[0], c[1], font=font)
+        for j in range(code):
+            draw1.text((15 + j * 30, 30*i), vcode(), color(), font=font)
     image1.show()
     image1.save('code_image.jpg', 'jpeg')
 
 
 create_image(100)
-
-
 
 
