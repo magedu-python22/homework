@@ -32,7 +32,8 @@ for i in range(100):
 for j in my_list:
     for k in j:
         print(k, tuple(random.sample([n for n in range(256)], 3)))
-    print("# =====")
+    print("#"*6)
+
 
 
 
