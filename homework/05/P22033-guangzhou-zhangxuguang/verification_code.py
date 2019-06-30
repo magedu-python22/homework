@@ -16,11 +16,18 @@ F (182, 136, 237)
 import random
 import string
 
-ran_str = ''.join(random.sample(string.ascii_letters + string.digits, 6))
 
-for i in ran_str:
-    RGB = (random.randint(0, 256), random.randint(0, 256), random.randint(0, 256))
-    print(i+str(RGB))
+n = 100
+code = []  # 存放单个验证码
+codes = []  # 存放n个验证码
 
+for _ in range(n):
+    ran_str = ''.join(random.sample(string.ascii_letters + string.digits, 6))
+    for i in ran_str:
+        RGB = (random.randint(0, 256), random.randint(0, 256), random.randint(0, 256))
+        code.append(i+str(RGB))
+    codes.append(code)
+    code = []
 
-
+for i in codes:
+    print(i)
