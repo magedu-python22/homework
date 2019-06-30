@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding:utf-8
 # @author: fulijun
-# @date: 2019-06-17
+# @date: 2019-07-01
 
 '''
 随机生成100个验证码，每个验证码由6个元素构成:
