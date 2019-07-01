@@ -18,23 +18,40 @@ F (182, 136, 237)
 """
 import random
 import string
+import platform
+from PIL import Image, ImageDraw, ImageFont
 
 
-def vcode():
-    return random.choice(string.ascii_uppercase + string.digits)
+# 生成随机字符 --> string
+def vcode(stringset=(string.ascii_uppercase + string.ascii_lowercase + string.digits)):
+    return random.choice(stringset)
 
 
+# 生成颜色 --> tuple
 def color():
-    return (random.randint(0,255) for _ in range(3))
+    return tuple(random.randint(0,255) for _ in range(3))
 
 
-def vcode_generater():
-    return ([vcode(),tuple(color())] for _ in range(6))
+def create_image(n=1,code=6):
+    width = 30*code + 20
+    height = 30*n
+    image1 = Image.new('RGB', (width, height), )
+    draw1 = ImageDraw.Draw(image1)
+    # 不同操作系统字体路径不同
+    os = platform.system()
+    if os == 'Windows':
+        font = ImageFont.truetype(r'C:\Windows\Fonts\arial.ttf', size=26)
+    elif os == 'Linux':
+        font = ImageFont.truetype('/usr/share/fonts/arial.ttf', size=26)
+    else:
+        font = ImageFont.truetype('/Library/Fonts/Arial.ttf', size=26)
+    for i in range(n):
+        for j in range(code):
+            draw1.text((15 + j * 30, 30*i), vcode(), color(), font=font)
+    image1.show()
+    image1.save('code_image.jpg', 'jpeg')
 
 
-for code in vcode_generater():
-    print(code)
-
-print(list(vcode_generater()))
+create_image(100)
 
 
