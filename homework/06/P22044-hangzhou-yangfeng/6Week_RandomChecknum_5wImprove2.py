@@ -24,7 +24,9 @@ def checknum(num):
             Rstr = random.choice(string.ascii_lowercase + string.ascii_uppercase + string.digits)
             draw.text((15+j*35, 0),Rstr,Rcolor, font=font)
         #保存图片格式为png格式 
-        f = 'png' + str(i) + '.' + 'png'
+        #f = 'png' + str(i) + '.' + 'png'
+		#保存图片格式为jpg格式 
+        f = 'jpg' + str(i) + '.' + 'jpg'
         image.save(f)
     return f
 
