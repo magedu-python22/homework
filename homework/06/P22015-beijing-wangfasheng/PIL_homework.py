@@ -45,19 +45,30 @@ def getRandomStr():
     return random_char
 
 
-# 获取一个image对象，参数分别是RGB格式，宽180，高20，颜色随机
-image = Image.new('RGB', (180, 20), getRandomColor())
+# 获取图片对象函数
+def getImage(color, rgb='RGB', size=(180, 20)):
+    return Image.new(rgb, size, color)
 
+
+# 获取图片验证码对象函数
+def getVeriCode():
+    for i in range(6):
+        # 随机获取6个字符
+        random_char = getRandomStr()
+        # 在图片上依次写入得到的字符，并附带上字符的颜色.参数是：定位，字符串，颜色
+        draw.text((10 + i * 30, 0), random_char, getRandomColor())
+
+
+# 获取一个image对象
+sourceImage = getImage(getRandomColor())
 
 # 获取一个画笔，并将image对象传给画笔
-draw = ImageDraw.Draw(image)
+draw = ImageDraw.Draw(sourceImage)
 
-for i in range(6):
-    # 随机获取6个字符
-    random_char = getRandomStr()
-    # 在图片上依次写入得到的字符，并附带上字符的颜色.参数是：定位，字符串，颜色
-    draw.text((10+i*30, 0), random_char, getRandomColor())
-
+# 调用生成图片验证码函数
+getVeriCode()
 
 # 保存图片到磁盘并命名
-image.save(open('homework06.png', 'wb'), 'png')
+sourceImage.save(open('homework06.png', 'wb'), 'png')
+
+
