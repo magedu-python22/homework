@@ -21,8 +21,6 @@ F (182, 136, 237)
 要求生成 png 或者jpg 格式的图片，关于如何生成图片 请搜索下python PIL生成图片
 """
 
-
-
 from PIL import Image
 from PIL import ImageDraw
 import random
@@ -34,26 +32,22 @@ def getRandomColor():
     c3 = random.randint(0, 255)
     return c1, c2, c3
 
-
 # 获取一个随机字符串，每个字符串的颜色也是随机的
 def getRandomStr():
     random_num = str(random.randint(0, 9))
     random_low_alpha = chr(random.randint(97, 122))
     random_upoer_alpha = chr(random.randint(65, 90))
     random_char = random.choice([random_num, random_low_alpha, random_upoer_alpha])
-
     return random_char
-
 
 # 获取图片对象函数
 def getImage(color, rgb='RGB', size=(180, 20)):
     return Image.new(rgb, size, color)
 
-
 # 获取图片验证码对象函数
-def getVeriCode():
-    for i in range(6):
-        # 随机获取6个字符
+def getVeriCode(x=6):
+    for i in range(x):
+        # 随机获取x个字符
         random_char = getRandomStr()
         # 在图片上依次写入得到的字符，并附带上字符的颜色.参数是：定位，字符串，颜色
         draw.text((10 + i * 30, 0), random_char, getRandomColor())
