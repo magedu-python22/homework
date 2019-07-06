@@ -51,7 +51,7 @@ def buildAuthCodeImage(code_len, img_file):
         code_draw.text((10+i*30, 0), authCodeGenerator(), colorGenerator(), font=code_font)
     
     # 将生成的验证码图片保存到png格式的图片文件
-    code_image.save(open('authCode.png','wb'),'png')
+    code_image.save(open(img_file,'wb'),'png')
     
 if __name__ == '__main__':
     image_file = os.path.join(os.curdir, 'authCode.png')
