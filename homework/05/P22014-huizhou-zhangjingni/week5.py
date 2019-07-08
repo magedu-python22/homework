@@ -32,3 +32,7 @@ def color():
 
 for _ in range(100):
     print(tuple((vcode(),color()) for _ in range(6)))
+
+"""
+考虑下颜色的显示，参考P22012-beijing-liyinkai
+"""

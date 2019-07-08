@@ -24,3 +24,7 @@ for _ in range(100):
 	for _ in range(6):
 		print(randcode(), randcolor())
 	print('-'*20)
+
+"""
+考虑下颜色的显示，参考P22012-beijing-liyinkai
+"""

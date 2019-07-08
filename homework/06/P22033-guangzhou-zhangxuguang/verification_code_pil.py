@@ -34,3 +34,7 @@ for i in range(n):
     # 将6位验证码保存为png格式
     img.save("code"+str(i)+".png", "png")
 
+"""
+简洁~
+"""
+

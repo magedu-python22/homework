@@ -36,3 +36,7 @@ for i in range(6):
     draw.text((5+i*15,5),Str,Color)
     
 image.save(open('/tmp/test.png','wb'),'png')
+
+"""
+注意保存文件的名字，最好是个变量
+"""

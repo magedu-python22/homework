@@ -37,3 +37,7 @@ for n in range(1,100):
     # 保存图片
     f = f'images/PIN_{n:0>3d}.png'
     PIN_convert().save(f, 'png')
+
+"""
+参考下P22012 同学的代码，虽然你写的也没有啥问题
+"""

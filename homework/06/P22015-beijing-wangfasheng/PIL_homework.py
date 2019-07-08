@@ -65,4 +65,6 @@ getVeriCode()
 # 保存图片到磁盘并命名
 sourceImage.save(open('homework06.png', 'wb'), 'png')
 
-
+"""
+注意文件的名字，当生成100多个的时候，可能会被覆盖
+"""

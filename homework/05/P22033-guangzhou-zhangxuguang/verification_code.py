@@ -31,3 +31,7 @@ for _ in range(n):
 
 for i in codes:
     print(i)
+
+"""
+考虑下颜色的显示，参考P22012-beijing-liyinkai
+"""

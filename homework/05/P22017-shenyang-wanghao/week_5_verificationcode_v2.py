@@ -14,3 +14,8 @@ def verification_code(element_number):
 	print(v_code)
 	
 verification_code(6)
+
+
+"""
+考虑下颜色的显示，参考P22012-beijing-liyinkai
+"""

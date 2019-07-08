@@ -26,5 +26,7 @@ for j in range(100):
 	image.save(open(str(j)+".png",'wb'),'png')
 
 
-	
+"""
+函数可以抽出来，单独放，最好不要放到for 循环体内
+"""
 		

@@ -19,3 +19,7 @@ for str1 in vercode:
         print(color)
     print()
 
+"""
+考虑下颜色的显示，参考P22012-beijing-liyinkai
+写成函数试试
+"""

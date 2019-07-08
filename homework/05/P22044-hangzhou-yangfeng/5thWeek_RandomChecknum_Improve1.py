@@ -11,6 +11,11 @@ from PIL import ImageDraw
 import random
 
 def checknum(num):
+    """
+    这样写注释
+    :param num:
+    :return:
+    """
     for i in range(num):
         #设定图片尺寸宽高和背景色
         image = Image.new('RGB',(220,50),'white')
@@ -29,3 +34,7 @@ def checknum(num):
 
 checknum(3)
 
+
+"""
+很好~
+"""

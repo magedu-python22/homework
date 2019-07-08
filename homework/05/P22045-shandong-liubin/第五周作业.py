@@ -5,6 +5,11 @@ b=[chr(i) for i in range(97,123)]
 lists=a+b+c
 
 def color():#颜色函数
+    """
+    颜色
+    函数
+    :return:
+    """
     colors=[]
     for i in range(3):
         i=random.randint(0,255)
@@ -25,3 +30,8 @@ def verification(much,len=6):
     return muchs
 
 print(verification(100))
+
+
+"""
+考虑下颜色的显示，参考P22012-beijing-liyinkai
+"""

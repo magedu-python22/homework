@@ -33,3 +33,7 @@ for _ in range(6):
     char1 = (random.choice([chr(random.randint(65,90)), str(random.randint(0,9))])) #65-90是所有字母，choice需要的值是一个列表中随机，所以可以两个列表
     colour = (random.randint(0,255), random.randint(0,255), random.randint(0,255))
     print(char1,colour)
+
+"""
+考虑下颜色的显示，参考P22012-beijing-liyinkai
+"""

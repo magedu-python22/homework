@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-# In[2]:
-
-
 #生成随机验证码改进2
 from PIL import Image
 from PIL import ImageFont
@@ -31,4 +27,7 @@ def checknum(num):
     return f
 
 checknum(3)
+"""
+这里return f的是什么作用呢？
+"""
 

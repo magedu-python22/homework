@@ -82,3 +82,7 @@ def set_color(string):  #随机挑选一种颜色对字符进行着色，背景�
 verification_code = generate_verification_code(100)
 for code in verification_code:
     print(set_color(code))
+
+"""
+写的很不错~
+"""

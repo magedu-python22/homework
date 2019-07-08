@@ -16,3 +16,6 @@ def newlmage():
         darw.text((10+i*30,10),randomchar,getrandomcolor())
     return image.save(open("K:/secureCRT/text.png","wb"),'png')
 newlmage()
+"""
+文件名一般都是变量的。别的是没有啥问题的
+"""

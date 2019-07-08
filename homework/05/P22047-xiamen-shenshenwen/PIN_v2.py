@@ -30,3 +30,8 @@ def seq():
 for _ in range(100):
     PIN = dict(zip(tmp_PIN(), seq()))
     print(PIN)
+
+
+"""
+考虑下颜色的显示，参考P22012-beijing-liyinkai
+"""

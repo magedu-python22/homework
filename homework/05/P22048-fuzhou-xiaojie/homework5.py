@@ -31,3 +31,8 @@ for i in range(n):
     print(i+1, code[i])
 
 
+"""
+考虑下颜色的显示，参考P22012-beijing-liyinkai
+写成函数试试
+"""
+

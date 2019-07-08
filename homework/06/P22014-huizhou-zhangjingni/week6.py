@@ -40,4 +40,7 @@ def create_image(n=1,code=6):
 
 
 create_image(100)
+"""
+注意文件的名字哈
+"""
 

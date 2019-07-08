@@ -40,3 +40,8 @@ for j in range(100):
         draw.text((10 + i * 30, 0), random_char, getRandomColor(), font=Font2)
 # 保存到硬盘，名为test.png格式为png的图片
     image.save(open('test{}.png'.format(j), 'wb'), 'png')
+
+
+"""
+是draw.text的这个方法吧，里面要求你传入正确的参数后，才能调用，就是和你写函数方法差不多
+"""

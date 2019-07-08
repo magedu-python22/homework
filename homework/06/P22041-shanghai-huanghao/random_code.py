@@ -21,3 +21,6 @@ for i in range(100):
 	for t in range(6):
 		draw.text((60 * t + 10, 10), randcode(), font=font, fill=randcolor())
 	image.save(f'code{i+1}.jpg', 'jpeg')
+"""
+写的很好
+"""

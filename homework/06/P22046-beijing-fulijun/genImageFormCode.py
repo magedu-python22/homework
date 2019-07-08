@@ -56,4 +56,6 @@ def buildAuthCodeImage(code_len, img_file):
 if __name__ == '__main__':
     image_file = os.path.join(os.curdir, 'authCode.png')
     buildAuthCodeImage(6, image_file)
-    
+    """
+    这样保存的话，文件名字会不会有问题？
+    """

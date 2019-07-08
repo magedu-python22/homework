@@ -36,4 +36,7 @@ for j in my_list:
 
 
 
+"""
+考虑下颜色的显示，参考P22012-beijing-liyinkai
+"""
 

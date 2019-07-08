@@ -53,6 +53,10 @@ def getchecknum(num):
     return f
 
 getchecknum(3)
+"""
+写的很好
+"""
+
 
 
 

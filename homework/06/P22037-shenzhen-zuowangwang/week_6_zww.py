@@ -76,7 +76,9 @@ def k75():
     print('Resize image to: %sx%s' % (w//2, h//2))
     # 把缩放后的图像用jpeg格式保存:
     im.save('thumbnail.jpg', 'jpeg')
-
+"""
+其实不用裁剪，可以直接保存成固定大小的
+"""
 
 
 

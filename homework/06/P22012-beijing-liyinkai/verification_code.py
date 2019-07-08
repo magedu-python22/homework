@@ -74,3 +74,6 @@ for _ in range(5):  # 验证码数量
     image.save('verification_codes/code_{}.jpg'.format(code), 'jpeg')
     # image.show()
     image.close()
+"""
+棒~
+"""

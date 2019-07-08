@@ -22,6 +22,9 @@ import random
 import string
 
 def authCodeGenerator(total_num, code_len):
+    """
+    这里注释
+    """
     # 验证码由字母（包括大写和小写）和数字构成
     code_elements = string.ascii_letters + string.digits
     

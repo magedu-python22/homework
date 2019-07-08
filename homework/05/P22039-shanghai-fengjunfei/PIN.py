@@ -32,3 +32,8 @@ for I in set1:
     for k in I:
         dict1[k] = set2.pop()
     print(dict1)
+
+
+"""
+考虑下颜色的显示，参考P22012-beijing-liyinkai
+"""
