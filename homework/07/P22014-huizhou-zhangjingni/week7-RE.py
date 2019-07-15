@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Author:Miki
 # Date : 2019/7/10 9:16
-
+import re
 """
 使用正则序列化。
     text = 'foo = 23 + 42 * 10'
@@ -12,16 +12,41 @@
 """
 
 
-import pickle
-import re
+def tokenize(code):
+    dest = []
+    token_specification = [
+        ('NAME', '[a-z]+'),
+        ('EQ', r'='),
+        ('NUM', r'\d+'),
+        ('PLUS', r'\+'),
+        ('MINUS', r'-'),
+        ('TIMES', r'\*'),
+        ('NEWLINE', r'\n'),
+    ]
+    tok_regex = '|'.join('(?P<%s>%s)' % pair for pair in token_specification)
+    for mo in re.finditer(tok_regex, code):
+        kind = mo.lastgroup
+        value = mo.group(kind)
+        if kind == 'NEWLINE':
+            if mo.end() == 1:
+                continue
+            yield dest
+            dest = []
+        elif mo.end() == len(code):
+            dest.append('{}:{}'.format(kind, value))
+            yield dest
+        else:
+            dest.append('{}:{}'.format(kind, value))
+
+
+text = '''
+foo = 23 + 42 * 10 
+foo1 = 23 - 214 + 800
+'''
+for token in tokenize(text):
+    print(token)
+
 text = 'foo = 23 + 42 * 10'
-group = ['NAME', 'EQ', 'NUM', 'PLUS', 'NUM', 'TIMES', 'NUM']
-result = re.split('\s', text)
-dest = list(zip(group, result))
-serialization = pickle.dumps(dest)
-print(pickle.loads(serialization))
-# with open('week7-1','wb+') as f:
-#     pickle.dump(dest,f)
-#
-# with open('week7-1', 'rb') as f:
-#     print(pickle.load(f))
+for token in tokenize(text):
+    print(token)
+
