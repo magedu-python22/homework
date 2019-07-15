@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 # Author:Miki
-# Date : 2019/7/10 9:16
+# Date : 2019/7/15 19:20
 import re
+
 """
 使用正则序列化。
     text = 'foo = 23 + 42 * 10'
@@ -13,7 +14,7 @@ import re
 
 
 def tokenize(code):
-    dest = []
+    tokens = []
     token_specification = [
         ('NAME', '[a-z]+'),
         ('EQ', r'='),
@@ -30,12 +31,12 @@ def tokenize(code):
         if kind == 'NEWLINE':
             if mo.end() == 1:
                 continue
-            yield dest
-            dest = []
+            yield tokens
+            tokens = []
         else:
-            dest.append('{}:{}'.format(kind, value))
+            tokens.append((kind, value))
             if mo.end() == len(code):
-                yield dest
+                yield tokens
 
 
 text = '''
@@ -48,4 +49,3 @@ for token in tokenize(text):
 text = 'foo = 23 + 42 * 10'
 for token in tokenize(text):
     print(token)
-
