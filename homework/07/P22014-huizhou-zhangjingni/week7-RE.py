@@ -32,11 +32,10 @@ def tokenize(code):
                 continue
             yield dest
             dest = []
-        elif mo.end() == len(code):
-            dest.append('{}:{}'.format(kind, value))
-            yield dest
         else:
             dest.append('{}:{}'.format(kind, value))
+            if mo.end() == len(code):
+                yield dest
 
 
 text = '''
