@@ -16,7 +16,7 @@ import re
 def tokenize(code):
     tokens = []
     token_specification = [
-        ('NAME', '[a-z]+'),
+        ('NAME', r'[a-z]+\w*'),
         ('EQ', r'='),
         ('NUM', r'\d+'),
         ('PLUS', r'\+'),
@@ -42,6 +42,7 @@ def tokenize(code):
 text = '''
 foo = 23 + 42 * 10 
 foo1 = 23 - 214 + 800
+f =  42 * 10 + 23 
 '''
 for token in tokenize(text):
     print(token)
