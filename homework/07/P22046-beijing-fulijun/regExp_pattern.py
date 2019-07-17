@@ -28,7 +28,7 @@ text = '''foo = 23 + 42 * 10,
        '''
 
 # 正则表达式，使用|连接，表示匹配每个|左边或者右边的正则表达式，re.M表示采用多行匹配模式
-reg_patterns = re.compile('|'.join('(?P<%s>%s)' % pattern for pattern in tokens_list), re.M)
+reg_patterns = re.compile('|'.join(r'(?P<%s>%s)' % pattern for pattern in tokens_list), re.M)
 
 # 搜索字符串，返回一个顺序访问每一个Match对象的迭代器
 for reg_pattern in re.finditer(reg_patterns, text):
