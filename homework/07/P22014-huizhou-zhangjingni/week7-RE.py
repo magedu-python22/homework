@@ -50,3 +50,8 @@ for token in tokenize(text):
 text = 'foo = 23 + 42 * 10'
 for token in tokenize(text):
     print(token)
+
+
+"""
+写的很棒~
+"""

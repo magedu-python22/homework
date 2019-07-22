@@ -49,3 +49,7 @@ def add_ellipsis_2(comments) -> list:
 
 print(add_ellipsis_1(comments1))
 print(add_ellipsis_2(comments2))
+
+"""
+可能是我没有说清楚，超过部分用.....表示
+"""

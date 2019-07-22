@@ -34,3 +34,7 @@ reg_patterns = re.compile('|'.join(r'(?P<%s>%s)' % pattern for pattern in tokens
 for reg_pattern in re.finditer(reg_patterns, text):
     # 打印序列对
     print([(reg_pattern.lastgroup, reg_pattern.group())], end=',')
+
+"""
+主要考点是 "|" 的用法
+"""

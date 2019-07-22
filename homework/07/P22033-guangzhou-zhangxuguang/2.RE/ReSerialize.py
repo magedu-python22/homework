@@ -17,3 +17,7 @@ keys = ['NAME', 'EQ', 'NUM', 'PLUS', 'NUM', 'TIMES', 'NUM']
 tokens = list(zip(keys,result))
 
 print(tokens)
+
+"""
+这样写也行
+"""

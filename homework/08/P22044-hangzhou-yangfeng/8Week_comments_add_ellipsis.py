@@ -17,3 +17,7 @@ def add_ellipsis2(comments, n=10):
             yield c
 
 print(tuple(add_ellipsis2(comments)))
+
+"""
+没有啥问题，已经用到了yield了
+"""

@@ -35,3 +35,7 @@ def add_ellipsis2(comments, n=10):
 
 
 print(tuple(add_ellipsis2(c2)))
+
+"""
+写的很好，直接用到了yield了
+"""

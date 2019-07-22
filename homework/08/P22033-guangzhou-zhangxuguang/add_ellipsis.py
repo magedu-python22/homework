@@ -42,3 +42,7 @@ def add_ellipsis2(temp=[]):
 
 
 print(add_ellipsis2())
+
+"""
+这里考点是yield  记得用yield 试试
+"""
