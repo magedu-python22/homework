@@ -50,3 +50,7 @@ def getVerificationCode(num):
     return rcode_list
 
 print(getVerificationCode(10))
+
+"""
+逻辑清晰，这样写没有问题。
+"""

@@ -31,4 +31,7 @@ def strSort(string):
     return result.join(lower_str_list + upper_str_list + odd_int_list + even_int_list)
 
 print(strSort("Sorting1234"))
+"""
+还有更好的写法，可以看下别的小伙伴的
+"""
 

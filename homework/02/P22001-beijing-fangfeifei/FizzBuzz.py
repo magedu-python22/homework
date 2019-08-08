@@ -8,3 +8,7 @@ for i in range(1,101):
         print('Buzz')
     else:
          print(i)
+
+"""
+这样是可以的，试着print的时候 不换行？
+"""

@@ -182,3 +182,7 @@ def deposit(id, userInfo):
 
 if __name__ == '__main__':
     mainPage()
+
+    """
+    逻辑很清晰，写的很好
+    """
