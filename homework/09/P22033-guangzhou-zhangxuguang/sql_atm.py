@@ -6,8 +6,9 @@ def register():
     while True:
         new_user = input("输入用户名>>>").strip()
         with conn as cursor:
-            sql = "select * from users where userid = '{0}'".format(new_user)
-            rows = cursor.execute(sql)
+            with cursor:
+                sql = "select * from users where userid = '{0}'".format(new_user)
+                rows = cursor.execute(sql)
         if rows:
             print('用户已存在,', end='')
         else:
@@ -29,9 +30,10 @@ def login():
     while True:
         username = input("请输入用户名>>>").strip()
         with conn as cursor:
-            sql = "select * from users where userid = '{0}'".format(username)
-            rows = cursor.execute(sql)
-            login_user = cursor.fetchall()
+            with cursor:
+                sql = "select * from users where userid = '{0}'".format(username)
+                rows = cursor.execute(sql)
+                login_user = cursor.fetchall()
         if not rows:
             user_count += 1
             if user_count == 3:
@@ -53,10 +55,11 @@ def login():
 # 查余额
 def check_balance(username):
     with conn as cursor:
-        sql = "select balance from users where userid = '{0}'".format(username)
-        cursor.execute(sql)
-        result = cursor.fetchall()
-    return result[0][0]
+        with cursor:
+            sql = "select balance from users where userid = '{0}'".format(username)
+            cursor.execute(sql)
+            username = cursor.fetchone()[0]
+    return username
 
 
 # 取款
@@ -72,12 +75,13 @@ def withdraw(username):
         withdraw_amount = int(money)
     balance = check_balance(username) - withdraw_amount
     with conn as cursor:
-        sql = "update users set balance = {0} where userid = '{1}'".format(
-            balance, username)
-        cursor.execute(sql)
-        log_sql = "insert into log_moneys(userid, change_amount, ctype) values ('{0}','{1}',1)".format(
-            username, -withdraw_amount)
-        cursor.execute(log_sql)
+        with cursor:
+            sql = "update users set balance = {0} where userid = '{1}'".format(
+                balance, username)
+            cursor.execute(sql)
+            log_sql = "insert into log_moneys(userid, change_amount, ctype) values ('{0}','{1}',1)".format(
+                username, -withdraw_amount)
+            cursor.execute(log_sql)
     print("取款成功，您的余额为{}".format(balance))
 
 
@@ -89,12 +93,13 @@ def deposit(username):
     deposit_amount = int(money)
     balance = check_balance(username) + deposit_amount
     with conn as cursor:
-        sql = "update users set balance = {0} where userid = '{1}'".format(
-            balance, username)
-        cursor.execute(sql)
-        log_sql = "insert into log_moneys(userid, change_amount, ctype) values ('{0}','{1}',2)".format(
-            username, deposit_amount)
-        cursor.execute(log_sql)
+        with cursor:
+            sql = "update users set balance = {0} where userid = '{1}'".format(
+                balance, username)
+            cursor.execute(sql)
+            log_sql = "insert into log_moneys(userid, change_amount, ctype) values ('{0}','{1}',2)".format(
+                username, deposit_amount)
+            cursor.execute(log_sql)
     print("存款成功，当前余额为{}".format(balance))
 
 
@@ -103,8 +108,9 @@ def transfer(username):
     while True:
         trans_user = input("请输入您要转账到的用户>>>").strip()
         with conn as cursor:
-            sql = "select * from users where userid = '{0}'".format(trans_user)
-            rows = cursor.execute(sql)
+            with cursor:
+                sql = "select * from users where userid = '{0}'".format(trans_user)
+                rows = cursor.execute(sql)
         if not rows:
             print('用户不存在,', end='')
         else:
@@ -121,18 +127,19 @@ def transfer(username):
     login_balance = check_balance(username) - trans_amount
     trans_balance = check_balance(trans_user) + trans_amount
     with conn as cursor:
-        login_sql = "update users set balance = {0} where userid = '{1}'".format(
-            login_balance, username)
-        cursor.execute(login_sql)
-        log_sql = "insert into log_moneys(userid, change_amount, ctype, about) values ('{0}','{1}',3 ,'{2}')".format(
-            username, -trans_amount, trans_user)
-        cursor.execute(log_sql)
-        trans_sql = "update users set balance = {0} where userid = '{1}'".format(
-            trans_balance, trans_user)
-        cursor.execute(trans_sql)
-        log_sql = "insert into log_moneys(userid, change_amount, ctype, about) values ('{0}','{1}',3 ,'{2}')".format(
-            trans_user, trans_amount, username)
-        cursor.execute(log_sql)
+        with cursor:
+            login_sql = "update users set balance = {0} where userid = '{1}'".format(
+                login_balance, username)
+            cursor.execute(login_sql)
+            log_sql = "insert into log_moneys(userid, change_amount, ctype, about) values ('{0}','{1}',3 ,'{2}')".format(
+                username, -trans_amount, trans_user)
+            cursor.execute(log_sql)
+            trans_sql = "update users set balance = {0} where userid = '{1}'".format(
+                trans_balance, trans_user)
+            cursor.execute(trans_sql)
+            log_sql = "insert into log_moneys(userid, change_amount, ctype, about) values ('{0}','{1}',3 ,'{2}')".format(
+                trans_user, trans_amount, username)
+            cursor.execute(log_sql)
 
     print("转账成功")
 
@@ -140,14 +147,15 @@ def transfer(username):
 # 银行流水
 def log_money(username):
     with conn as cursor:
-        sql = "select * from log_moneys where userid = '{0}'".format(username)
-        rows = cursor.execute(sql)
-        if not rows:  # 查询的数据为空时抛出NoExist的异常
-            try:
-                raise Exception("NoExist")
-            except Exception as e:
-                print(e)
-        result = cursor.fetchall()
+        with cursor:
+            sql = "select * from log_moneys where userid = '{0}'".format(username)
+            rows = cursor.execute(sql)
+            if not rows:  # 查询的数据为空时抛出NoExist的异常
+                try:
+                    raise Exception("NoExist")
+                except Exception as e:
+                    print(e)
+            result = cursor.fetchall()
     for i in result:
         print(i)
 
@@ -190,6 +198,7 @@ if __name__ == '__main__':
         elif login_choose == "2":
             register()
         elif login_choose == "3":
+            conn.close()
             exit("退出系统")
         else:
             print("输入有误")
