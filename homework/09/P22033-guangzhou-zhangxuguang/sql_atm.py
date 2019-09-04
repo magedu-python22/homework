@@ -1,8 +1,11 @@
 import pymysql
 
 
-# 注册
 def register():
+    """
+    注册
+    :return:
+    """
     while True:
         new_user = input("输入用户名>>>").strip()
         with conn as cursor:
@@ -22,8 +25,11 @@ def register():
     print("注册成功")
 
 
-# 登录
 def login():
+    """
+    登录
+    :return:
+    """
     user_count = 0
     pwd_count = 0
 
@@ -52,8 +58,12 @@ def login():
     return username
 
 
-# 查余额
 def check_balance(username):
+    """
+    查余额
+    :param username:
+    :return:
+    """
     with conn as cursor:
         with cursor:
             sql = "select balance from users where userid = '{0}'".format(username)
@@ -62,8 +72,13 @@ def check_balance(username):
     return username
 
 
-# 取款
+
 def withdraw(username):
+    """
+    取款
+    :param username:
+    :return:
+    """
     money = input("请输入您的取款金额>>>").strip()
     while not money.isdecimal():
         money = input("输入有误，请重新输入取款金额>>>").strip()
@@ -85,8 +100,13 @@ def withdraw(username):
     print("取款成功，您的余额为{}".format(balance))
 
 
-# 存款
+
 def deposit(username):
+    """
+    存款
+    :param username:
+    :return:
+    """
     money = input("请输入您的存款金额>>>").strip()
     while not money.isdecimal():
         money = input("输入有误，请输入正确金额>>>").strip()
@@ -103,8 +123,12 @@ def deposit(username):
     print("存款成功，当前余额为{}".format(balance))
 
 
-# 转账
 def transfer(username):
+    """
+    # 转账
+    :param username:
+    :return:
+    """
     while True:
         trans_user = input("请输入您要转账到的用户>>>").strip()
         with conn as cursor:
@@ -144,8 +168,12 @@ def transfer(username):
     print("转账成功")
 
 
-# 银行流水
 def log_money(username):
+    """
+    银行流水
+    :param username:
+    :return:
+    """
     with conn as cursor:
         with cursor:
             sql = "select * from log_moneys where userid = '{0}'".format(username)
@@ -160,8 +188,11 @@ def log_money(username):
         print(i)
 
 
-# 菜单
 def menu():
+    """
+    菜单
+    :return:
+    """
     print("="*48)
     print(" "*15 + "银行ATM机模拟系统")
     print("  1.余额  2.存款  3.取款  4.转账  5.流水  6.退出")
@@ -170,6 +201,13 @@ def menu():
 
 
 if __name__ == '__main__':
+
+    """
+    1 函数注释，一般都是写在函数体内的，我帮你改了一些，希望你以后也可以这么写
+    2 尝试下改成面向对象的形式
+    3 像 sql 这些是不是可以写一个方法抽象出来，来统一调度呢？
+    4 现在有了数据库这些，假如让你把这些变成web页面形式的，你会怎么做呢？可以先想想，等学到web开发那节，希望你抽空来实现下这个，把这些写成web形式的。
+    """
     print("-----欢迎使用ATM机模拟系统----")
     print(end='')
     conn = pymysql.connect('127.0.0.1', 'guang', 'guang', 'atm')
@@ -202,3 +240,4 @@ if __name__ == '__main__':
             exit("退出系统")
         else:
             print("输入有误")
+
