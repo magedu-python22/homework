@@ -1,9 +1,10 @@
 import datetime
 import time
-
+from functools import wraps
 
 # 1. 请设计一个decorator，它可作用于任何函数上，并打印该函数的执行时间
 def timeit(func):
+    @wraps(func)
     def wapper(*args, **kwargs):
         start = datetime.datetime.now()
         ret = func(*args, **kwargs)
@@ -24,6 +25,7 @@ print(test(3, 4))
 # 2. 请设计一个decorator，它可作用于任何函数上，要求可以接受一个int作为参数，如果该函数的执行时间大于int传递的时间话，请打印改函数名字和执行时间
 def timeit(int, func=lambda name, delta: print('function {} took {}s'.format(name, delta))):
     def _timeit(fn):
+        @wraps(fn)
         def wapper(*args, **kwargs):
             start = datetime.datetime.now()
             ret = fn(*args, **kwargs)
@@ -41,3 +43,4 @@ def test(x, y):
     return x + y
 
 print(test(3, 4))
+# 少个 @wraps(fn)你看看少个这个会怎么呢？

@@ -4,12 +4,13 @@ __author__ = 'fulijun'
 __date__ = '2019-09-07'
 
 """
-1. ÇëÉè¼ÆÒ»¸ödecorator£¬Ëü¿É×÷ÓÃÓÚÈÎºÎº¯ÊýÉÏ£¬²¢´òÓ¡¸Ãº¯ÊýµÄÖ´ÐÐÊ±¼ä
+1. ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½decoratorï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎºÎºï¿½ï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½ï¿½ï¿½Ó¡ï¿½Ãºï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½Ê±ï¿½ï¿½
 """
-
+from functools import wraps
 import datetime
 
 def decorator(func):
+    @wraps(func)
     def wrapper(*args, **kwargs):
         time_rst = datetime.datetime.now()
         ret = func(*args, **kwargs)
@@ -30,7 +31,7 @@ def dstportIncr(port, step, cnt):
 print(dstportIncr(80, 2, 10000))
 
 """
-2. ÇëÉè¼ÆÒ»¸ödecorator£¬Ëü¿É×÷ÓÃÓÚÈÎºÎº¯ÊýÉÏ£¬ÒªÇó¿ÉÒÔ½ÓÊÜÒ»¸öint×÷Îª²ÎÊý£¬Èç¹û¸Ãº¯ÊýµÄÖ´ÐÐÊ±¼ä´óÓÚint´«µÝµÄÊ±¼ä»°£¬Çë´òÓ¡¸Äº¯ÊýÃû×ÖºÍÖ´ÐÐÊ±¼ä
+2. ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½decoratorï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎºÎºï¿½ï¿½ï¿½ï¿½Ï£ï¿½Òªï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½intï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½intï¿½ï¿½ï¿½Ýµï¿½Ê±ï¿½ä»°ï¿½ï¿½ï¿½ï¿½ï¿½Ó¡ï¿½Äºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öºï¿½Ö´ï¿½ï¿½Ê±ï¿½ï¿½
 """
 def timer_set(timer):
     try:
@@ -41,6 +42,7 @@ def timer_set(timer):
 
 def decorator(duration, func=lambda x:int(x)):
     def _decorator(fn):
+        @wraps(fn)
         def wrapper(*args, **kwargs):
             time_rst = datetime.datetime.now()
             ret = fn(*args, **kwargs)
@@ -64,3 +66,4 @@ def dstportIncr(port, step, cnt):
         
 print(dstportIncr(80, 2, 50000))
 
+# å°‘ä¸ª @wraps(fn)ä½ çœ‹çœ‹å°‘ä¸ªè¿™ä¸ªä¼šæ€Žä¹ˆå‘¢ï¼Ÿ
