@@ -34,3 +34,4 @@ if __name__ == '__main__':
     text='foo = 23 + 42 * 10'
     print(serializing(text))
 
+# 这里没有啥问题，主要是让大家学会使用简单的正则

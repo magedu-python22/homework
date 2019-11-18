@@ -206,8 +206,9 @@ def sign_in(usdb: dict = user_db) -> str:
                     break
                 else:
                     print(error_mes('Different inputs!'))
-
+    "假如 register_status 为真的话，这里return username是不是有问题呢？ "
     return username
+
 
 
 # 业务功能
@@ -314,7 +315,7 @@ def business_features(current_user, feature_cmd: str = None):
                 print(error_mes('Invalid Input.'))
     else:
         return
-
+"business_features 这里if else 太多了，考虑有没有办法优化下？"
 
 # 主程序
 os.system('clear')
